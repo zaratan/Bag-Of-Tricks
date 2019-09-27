@@ -1,0 +1,17 @@
+name: Build
+
+on: 
+  push:
+    branches:
+    - release/*
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@1.1.0
+      run: yarn build
