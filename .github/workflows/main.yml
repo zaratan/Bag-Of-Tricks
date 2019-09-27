@@ -12,8 +12,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Build
+    - name: Use yarn
       uses: Borales/actions-yarn@1.1.0
+    - name: Install
+      run: yarn install
+    - name: Build
       run: yarn build
     - name: Zip
       run: zip bag-of-tricks.zip dist/*
