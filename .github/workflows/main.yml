@@ -12,6 +12,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: GitHub Action for Yarn
+    - name: Build
       uses: Borales/actions-yarn@1.1.0
       run: yarn build
+    - name: Zip
+      run: zip bag-of-tricks.zip dist/*
