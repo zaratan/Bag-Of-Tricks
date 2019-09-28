@@ -1,29 +1,25 @@
 name: Build
 
-on: 
-  push:
-    branches:
-    - release/*
+on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Use yarn
-      uses: Borales/actions-yarn@1.1.0
-    - name: Install
-      run: yarn install
-    - name: Build
-      run: yarn build
-    - name: Zip
-      run: zip dist/bag-of-tricks.zip dist/*
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: dist/bag-of-tricks.zip       
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Use yarn
+        uses: Borales/actions-yarn@1.1.0
+      - name: Install
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Zip
+        run: zip dist/bag-of-tricks.zip dist/*
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/bag-of-tricks.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
