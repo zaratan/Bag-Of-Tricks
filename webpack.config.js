@@ -1,6 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -11,16 +10,13 @@ module.exports = {
     popup: './src/popup.jsx',
   },
   output: {
-    filename: '[name].[contenthash].bundle.js'
+    filename: '[name].[contenthash].bundle.js',
   },
   resolve: {
-    extensions: ['.jsx', '.js']
+    extensions: ['.jsx', '.js'],
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-    splitChunks: {
-      chunks: 'all',
-    },
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -28,7 +24,7 @@ module.exports = {
       template: 'src/popup.html',
       filename: 'popup.html',
       inject: true,
-      chunks: ['popup']
+      chunks: ['popup'],
     }),
     new ManifestPlugin({
       seed: {
@@ -37,10 +33,11 @@ module.exports = {
         name: 'Bag of Tricks',
         version: '0.0.2',
         browser_action: {
-          default_popup: 'popup.html'
+          default_popup: 'popup.html',
         },
-        permissions: ['storage', 'activeTab']
+        permissions: ['storage', 'activeTab'],
       },
+      generate: (seed, _files, _entrypoints) => seed,
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
@@ -65,9 +62,6 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
           },
         ],
       },
