@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from './Button';
 
 export default function HighlightDiv() {
   const borderStyleId = 'bot-visible-border-style';
@@ -54,10 +55,8 @@ export default function HighlightDiv() {
     setBorders(true);
   };
   return (
-    <li className="action">
-      <button onClick={actOnBorder} type="button">
-        {borders ? `Deactivate` : `Activate`} borders view
-      </button>
-    </li>
+    <Button action={actOnBorder} active={borders}>
+      {borders ? `Deactivate` : `Activate`} borders view
+    </Button>
   );
 }

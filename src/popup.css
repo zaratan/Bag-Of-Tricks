@@ -1,18 +1,20 @@
 html,
 body {
   min-width: 200px;
+  font-size: 10px;
 }
 body {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
+
+h1 {
+  font-size: 3rem;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-button {
-  cursor: pointer;
 }
 
 .flex {
@@ -21,8 +23,4 @@ button {
 
 .flex-center {
   justify-content: center;
-}
-
-.action button {
-  padding: 5px;
 }

@@ -3,8 +3,10 @@
     "airbnb",
     "prettier",
     "plugin:prettier/recommended",
-    "prettier/react"
+    "prettier/react",
+    "plugin:flowtype/recommended"
   ],
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
@@ -98,5 +100,8 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
-  "plugins": ["prettier", "react-hooks"]
+  "plugins": ["prettier", "react-hooks", "flowtype"],
+  "globals": {
+    "chrome": "readonly"
+  }
 }
