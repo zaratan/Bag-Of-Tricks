@@ -1,7 +1,14 @@
-import styled from 'styled-components';
-import React from 'react';
+// @flow
 
-const ActionButton = styled.button`
+import styled, { type StyledComponent } from 'styled-components';
+import React from 'react';
+import type { Node, ComponentType } from 'react';
+
+const ActionButton: StyledComponent<
+  { enabled: boolean },
+  {},
+  HTMLButtonElement
+> = styled.button`
   width: 90%;
   padding: 5px;
   font-size: 1.5rem;
@@ -18,14 +25,22 @@ const ActionButton = styled.button`
   }
 `;
 
-const ListElement = styled.li`
+const ListElement: StyledComponent<{}, {}, HTMLLIElement> = styled.li`
   width: 100%;
   display: flex;
   justify-content: center;
 `;
 
-const Button = ({ children, action, active }) => {
-  const actionWithKey = event => {
+const Button = ({
+  children,
+  action,
+  active,
+}: {
+  children: Node,
+  action: (SyntheticEvent<HTMLButtonElement>) => void,
+  active: boolean,
+}) => {
+  const actionWithKey = (event: SyntheticKeyboardEvent<HTMLButtonElement>) => {
     if (event.keyCode && (event.keyCode !== 13 && event.keyCode !== 32)) return;
     action(event);
   };

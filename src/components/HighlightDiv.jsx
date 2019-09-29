@@ -1,3 +1,5 @@
+// @flow
+
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 
@@ -7,10 +9,9 @@ export default function HighlightDiv() {
   useEffect(() => {
     const refreshActiveBorderState = () => {
       chrome.tabs.executeScript(
-        null,
         { code: `document.getElementById("${borderStyleId}") !== null` },
         results => {
-          setBorders(results[0]);
+          setBorders(!!results[0]);
         }
       );
     };
