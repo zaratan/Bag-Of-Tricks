@@ -2,19 +2,22 @@
 
 import styled, { type StyledComponent } from 'styled-components';
 import React from 'react';
-import type { Node, ComponentType } from 'react';
+import type { Node } from 'react';
+import type { themeType } from '../styles/theme';
 
 const ActionButton: StyledComponent<
   { enabled: boolean },
-  {},
+  themeType,
   HTMLButtonElement
 > = styled.button`
   width: 90%;
-  padding: 5px;
+  padding: 7px;
   font-size: 1.5rem;
   cursor: pointer;
   border-radius: 3px;
-  background-color: ${props => (props.enabled ? 'green' : 'blue')};
+  border: none;
+  background-color: ${({ enabled, theme }) =>
+    enabled ? theme.highlight : theme.lightAccent};
   margin: 0 auto;
   opacity: 0.9;
   :focus {
@@ -25,7 +28,7 @@ const ActionButton: StyledComponent<
   }
 `;
 
-const ListElement: StyledComponent<{}, {}, HTMLLIElement> = styled.li`
+const ListElement: StyledComponent<{}, themeType, HTMLLIElement> = styled.li`
   width: 100%;
   display: flex;
   justify-content: center;

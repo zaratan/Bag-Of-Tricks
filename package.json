@@ -11,14 +11,14 @@
     "> 1%, not dead"
   ],
   "dependencies": {
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.3",
@@ -29,15 +29,15 @@
     "css-loader": "^3.2.0",
     "eslint": "6.1.0",
     "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
     "flow": "^0.2.3",
-    "flow-bin": "^0.108.0",
+    "flow-bin": "^0.109.0",
     "flow-typed": "^2.6.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
@@ -47,6 +47,6 @@
     "terser-webpack-plugin": "^2.1.2",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
-    "webpack-manifest-plugin": "^2.1.2"
+    "webpack-manifest-plugin": "^2.2.0"
   }
 }
