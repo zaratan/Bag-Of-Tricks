@@ -6,7 +6,7 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid gray;
   padding: 7px;
   padding-bottom: 4px;
-  background-color: ${props => props.theme.base0};
+  background-color: ${(props) => props.theme.base0};
 `;
 
 const Text = styled.span`

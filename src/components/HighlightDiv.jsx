@@ -10,7 +10,7 @@ export default function HighlightDiv() {
     const refreshActiveBorderState = () => {
       chrome.tabs.executeScript(
         { code: `document.getElementById("${borderStyleId}") !== null` },
-        results => {
+        (results) => {
           setBorders(!!results[0]);
         }
       );
