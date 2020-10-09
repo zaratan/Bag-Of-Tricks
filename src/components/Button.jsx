@@ -18,7 +18,7 @@ const ActionButton: StyledComponent<
   border: none;
   background-color: ${({ enabled, theme }) =>
     enabled ? theme.highlight : theme.lightAccent};
-  margin: 0 auto;
+  margin: 0.2rem auto;
   opacity: 0.9;
   :focus {
     outline: none;
@@ -44,7 +44,7 @@ const Button = ({
   active: boolean,
 }) => {
   const actionWithKey = (event: SyntheticKeyboardEvent<HTMLButtonElement>) => {
-    if (event.keyCode && (event.keyCode !== 13 && event.keyCode !== 32)) return;
+    if (event.keyCode && event.keyCode !== 13 && event.keyCode !== 32) return;
     action(event);
   };
   return (
