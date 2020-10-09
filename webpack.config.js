@@ -31,7 +31,7 @@ module.exports = {
         description: 'Simple tricks to help your life.',
         manifest_version: 2,
         name: 'Bag of Tricks',
-        version: '0.0.2',
+        version: '0.0.4',
         browser_action: {
           default_popup: 'popup.html',
         },
